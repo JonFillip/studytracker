@@ -25,11 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG_VALUE')
 
-if os.environ.get('DEBUG') == 'TRUE':
+if os.environ.get('DEBUG_VALUE') == 'TRUE':
     DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
+elif os.environ.get('DEBUG_VALUE') == 'FALSE':
     DEBUG = False
 
 ALLOWED_HOSTS = ['mystudytracker.herokuapp.com']
@@ -69,7 +69,7 @@ ROOT_URLCONF = 'django_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR), 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
