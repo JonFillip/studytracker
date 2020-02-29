@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Tracker - Entry</title>
+</head>
+<body>
+{% extends 'django_apps/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+  <div class="card mb-3">
+      <h4 class="card-header">
+        <p><a href="{% url 'django_apps:topic' topic.id %}">{{ topic }}</a></p>
+      </h4>
+  </div>
+
+    <p>Edit entry:</p>
+    <form action="{% url 'django_apps:edit_entry' entry.id %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form%}
+        {% buttons %}
+          <button name="submit" class="btn btn-primary">Save changes</button>
+        {% endbuttons %}
+    </form>
+
+{% endblock content %}
+</body>
+</html>

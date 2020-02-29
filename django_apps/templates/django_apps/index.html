@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Tracker - Home</title>
+</head>
+<body>
+{% extends "django_apps/base.html" %}
+
+{% block page_header %}
+  <div class="jumbotron">
+      <h1 class="display-3">Track your learning</h1>
+
+      <p class="lead">Study tracker helps you take notes and keep track of your
+          learning, for any topic or subject you learning about. Study Tracker
+          lets you lodge in new topics you're currently learning about, make an
+          entry summarizing what you've learned and let's you set remainders for those entries.</p>
+      <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+         role="button">Sign up &raquo;</a>
+  </div>
+{% endblock page_header %}
+</body>
+</html>
