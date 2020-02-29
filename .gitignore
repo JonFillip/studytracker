@@ -1,8 +1,6 @@
 # Mac
 .DS_Store
 web_app/
-*.sqlite3
-.bash_profile
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
